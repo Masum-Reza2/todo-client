@@ -63,7 +63,7 @@ function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        Commerce Book
+                        Task Manager
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -114,18 +114,13 @@ function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        Comm-Book
+                        Task Manager
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, color: 'red' }}>
                         {pageItems}
                     </Box>
-                    {/* search box */}
-                    <div className='items-center justify-center hidden md:flex relative'>
-                        <input type="text" placeholder="Search Commerce-Book" className="input input-bordered md:px-5 mr-5 p-2 rounded-md text-black focus:outline-none" />
-                    </div>
-
                     {/* profile */}
-                    <ProfileMenu handleOpenUserMenu={handleOpenUserMenu} anchorElUser={anchorElUser} handleCloseUserMenu={handleCloseUserMenu} />
+                    {/* <ProfileMenu handleOpenUserMenu={handleOpenUserMenu} anchorElUser={anchorElUser} handleCloseUserMenu={handleCloseUserMenu} /> */}
                 </Toolbar>
             </Container>
         </AppBar>
