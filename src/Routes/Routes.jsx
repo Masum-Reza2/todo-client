@@ -8,6 +8,10 @@ import Dashboard from "../Pages/Dashboard/Dashboard"
 import PrivateRoute from "./PrivateRoute"
 import AddTask from "../Pages/Dashboard/AddTask/AddTask"
 import DashHome from "../Pages/Dashboard/DashHome/DashHome"
+import PreviousTask from "../Pages/Dashboard/PreviousTask/PreviousTask"
+import TodoList from "../Pages/Dashboard/TodoList/TodoList"
+import OngoingTask from "../Pages/Dashboard/OngoingTask/OngoingTask"
+import CompletedTask from "../Pages/Dashboard/CompletedTask/CompletedTask"
 
 const Routes = createBrowserRouter([
     {
@@ -30,6 +34,10 @@ const Routes = createBrowserRouter([
         children: [
             { index: true, element: <DashHome /> },
             { path: 'addTask', element: <AddTask /> },
+            { path: 'previousTask', element: <PreviousTask /> },
+            { path: 'todoList', element: <TodoList /> },
+            { path: 'ongoingTask', element: <OngoingTask /> },
+            { path: 'completedTask', element: <CompletedTask /> },
         ]
     }
 ])

@@ -18,12 +18,9 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import ListIcon from '@mui/icons-material/List';
-import { Avatar, IconButton, Tooltip } from '@mui/material';
-import useGlobal from '../../Hooks/useGlobal';
 import ProfileMenu from '../../Components/ProfileMenu';
 
 export default function Dashboard() {
-    const { user } = useGlobal()
 
     const [state, setState] = React.useState({
         top: false,
@@ -60,41 +57,49 @@ export default function Dashboard() {
                     </ListItem>
                 </Link>
 
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <TaskIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Previous Task'} />
-                    </ListItemButton>
-                </ListItem>
+                <Link to={'/dashboard/previousTask'}>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <TaskIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={'Previous Task'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
 
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <ListAltIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Todo List'} />
-                    </ListItemButton>
-                </ListItem>
+                <Link to={'/dashboard/todoList'}>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <ListAltIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={'Todo List'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
 
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <DirectionsRunIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={`Ongoing Task`} />
-                    </ListItemButton>
-                </ListItem>
+                <Link to={'/dashboard/ongoingTask'}>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <DirectionsRunIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={`Ongoing Task`} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
 
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <CloudDoneIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={`Completed Task`} />
-                    </ListItemButton>
-                </ListItem>
+                <Link to={'/dashboard/completedTask'}>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <CloudDoneIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={`Completed Task`} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
 
             </List>
 
