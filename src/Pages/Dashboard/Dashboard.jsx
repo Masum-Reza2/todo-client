@@ -118,7 +118,7 @@ export default function Dashboard() {
 
     return (
         <div>
-            <div className='h-14 bg-[#1976d2] text-white fixed w-full max-w-7xl mx-auto flex items-center justify-between'>
+            <div className='h-14 bg-[#1976d2] text-white fixed w-full max-w-7xl mx-auto flex items-center justify-between z-50'>
                 {['left'].map((anchor) => (
                     <React.Fragment key={anchor}>
                         <Button variant='white' onClick={toggleDrawer(anchor, true)}>
