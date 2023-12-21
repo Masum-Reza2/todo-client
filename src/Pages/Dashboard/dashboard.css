@@ -1,4 +1,4 @@
 .active {
-  color: green;
+  text-decoration: underline;
   font-weight: bolder;
 }

@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import taskLottie from '../../../assets/LottieAnimations/registrationLottie.json'
+import taskLottie from '../../../assets/LottieAnimations/addTask.json'
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { useForm } from "react-hook-form"
 import { useState } from "react";
@@ -32,7 +32,8 @@ const AddTask = () => {
                 description: data?.description,
                 deadline: data?.deadline,
                 priority,
-                status: 'ongoing'
+                status: 'ongoing',
+                previousWorked: false
             }
             await secureAxios.post('/todos', todo);
             setLoading(false);
