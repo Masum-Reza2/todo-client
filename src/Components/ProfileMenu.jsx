@@ -3,9 +3,13 @@ import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from "@m
 import useGlobal from "../Hooks/useGlobal"
 import defaultProfile from '../assets/logos/defPro2.webp'
 import React from "react";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMenu = () => {
-    const { user } = useGlobal();
+    const { user, logOutUser } = useGlobal();
+    const navigate = useNavigate();
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenUserMenu = (event) => {
@@ -15,6 +19,28 @@ const ProfileMenu = () => {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    const handleLogOut = () => {
+        handleCloseUserMenu()
+        Swal.fire({
+            title: "Confirm Logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirm!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await logOutUser();
+                    toast.success('Logout successfull!');
+                    navigate('/');
+                } catch (error) {
+                    toast.error(error?.message)
+                }
+            }
+        });
+    }
 
     return (
         <Box sx={{ flexGrow: 0 }}>
@@ -41,9 +67,9 @@ const ProfileMenu = () => {
             >
                 {/* 1 */}
                 <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Masum Reza</Typography>
+                    <Typography textAlign="center">{user?.displayName}</Typography>
                 </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
+                <MenuItem onClick={handleLogOut}>
                     <Typography textAlign="center">Log-out</Typography>
                 </MenuItem>
             </Menu>
