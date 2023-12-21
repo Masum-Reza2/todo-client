@@ -8,7 +8,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
+import './dashboard.css'
 
 // icons
 import AddTaskIcon from '@mui/icons-material/AddTask';
@@ -46,7 +47,7 @@ export default function Dashboard() {
         >
             <List>
 
-                <Link to={'/dashboard/addTask'}>
+                <NavLink className='bg-red-500' to={'/dashboard/addTask'}>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -55,9 +56,9 @@ export default function Dashboard() {
                             <ListItemText primary={'Add Task'} />
                         </ListItemButton>
                     </ListItem>
-                </Link>
+                </NavLink>
 
-                <Link to={'/dashboard/previousTask'}>
+                <NavLink to={'/dashboard/previousTask'}>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -66,9 +67,9 @@ export default function Dashboard() {
                             <ListItemText primary={'Previous Task'} />
                         </ListItemButton>
                     </ListItem>
-                </Link>
+                </NavLink>
 
-                <Link to={'/dashboard/todoList'}>
+                <NavLink to={'/dashboard/todoList'}>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -77,9 +78,9 @@ export default function Dashboard() {
                             <ListItemText primary={'Todo List'} />
                         </ListItemButton>
                     </ListItem>
-                </Link>
+                </NavLink>
 
-                <Link to={'/dashboard/ongoingTask'}>
+                <NavLink to={'/dashboard/ongoingTask'}>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -88,9 +89,9 @@ export default function Dashboard() {
                             <ListItemText primary={`Ongoing Task`} />
                         </ListItemButton>
                     </ListItem>
-                </Link>
+                </NavLink>
 
-                <Link to={'/dashboard/completedTask'}>
+                <NavLink to={'/dashboard/completedTask'}>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -99,7 +100,7 @@ export default function Dashboard() {
                             <ListItemText primary={`Completed Task`} />
                         </ListItemButton>
                     </ListItem>
-                </Link>
+                </NavLink>
 
             </List>
 

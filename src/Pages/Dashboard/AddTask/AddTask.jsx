@@ -5,12 +5,18 @@ import { useForm } from "react-hook-form"
 import { useState } from "react";
 import useGlobal from "../../../Hooks/useGlobal";
 import useSecureAxios from "../../../Hooks/useSecureAxios";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 
 const AddTask = () => {
+    const [loading, setLoading] = useState(false)
     const [priority, setPriority] = useState('');
     const { user } = useGlobal();
     const secureAxios = useSecureAxios();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -18,18 +24,30 @@ const AddTask = () => {
     } = useForm()
 
     const onSubmit = async (data) => {
-        const todo = {
-            email: user?.email,
-            title: data?.title,
-            description: data?.description,
-            deadline: data?.deadline,
-            priority,
-            status: 'ongoing'
+        try {
+            setLoading(true)
+            const todo = {
+                email: user?.email,
+                title: data?.title,
+                description: data?.description,
+                deadline: data?.deadline,
+                priority,
+                status: 'ongoing'
+            }
+            await secureAxios.post('/todos', todo);
+            setLoading(false);
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Task added.",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            navigate('/dashboard/todoList')
+        } catch (error) {
+            toast.error(error?.message);
+            setLoading(false)
         }
-
-        const res = await secureAxios.post('/todos', todo)
-        console.log(res?.data)
-
     }
     return (
         <div className="px-1 md:px-2">
@@ -70,7 +88,7 @@ const AddTask = () => {
                                 <MenuItem value={'High'}>High</MenuItem>
                             </Select>
                         </FormControl>
-                        <Button variant="contained" type="submit" className="mx-auto w-full border p-1 rounded-md">Add Task</Button>
+                        <Button variant="contained" type="submit" className="mx-auto w-full border p-1 rounded-md">Add Task {loading && <TbFidgetSpinner className="text-white ml-3 animate-spin font-bold" />}</Button>
                     </form>
                 </div>
                 <div className="md:col-span-5 order-1 md:order-2">

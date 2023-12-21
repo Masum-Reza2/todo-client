@@ -33,6 +33,7 @@ const LoginPage = () => {
             setLoading(false);
             toast.success('Login successful!');
             navigate(state || '/');
+            window.location.reload();
         } catch (error) {
             toast.error(error?.message);
             setLoading(false);
