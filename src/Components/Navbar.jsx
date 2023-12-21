@@ -12,25 +12,16 @@ import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import './navbar.css'
-import ProfileMenu from './ProfileMenu';
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
     };
 
     const pageItems = <div className='lg:flex'>
@@ -119,8 +110,6 @@ function Navbar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, color: 'red' }}>
                         {pageItems}
                     </Box>
-                    {/* profile */}
-                    {/* <ProfileMenu handleOpenUserMenu={handleOpenUserMenu} anchorElUser={anchorElUser} handleCloseUserMenu={handleCloseUserMenu} /> */}
                 </Toolbar>
             </Container>
         </AppBar>
