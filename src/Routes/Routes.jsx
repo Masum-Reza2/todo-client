@@ -12,6 +12,8 @@ import PreviousTask from "../Pages/Dashboard/PreviousTask/PreviousTask"
 import TodoList from "../Pages/Dashboard/TodoList/TodoList"
 import OngoingTask from "../Pages/Dashboard/OngoingTask/OngoingTask"
 import CompletedTask from "../Pages/Dashboard/CompletedTask/CompletedTask"
+import TodoDetails from "../Components/TodoDetails"
+import TodoEdit from "../Components/TodoEdit"
 
 const Routes = createBrowserRouter([
     {
@@ -38,6 +40,8 @@ const Routes = createBrowserRouter([
             { path: 'todoList', element: <TodoList /> },
             { path: 'ongoingTask', element: <OngoingTask /> },
             { path: 'completedTask', element: <CompletedTask /> },
+            { path: 'details/:id', element: <TodoDetails /> },
+            { path: 'edit/:id', element: <TodoEdit /> },
         ]
     }
 ])

@@ -20,8 +20,11 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import ListIcon from '@mui/icons-material/List';
 import ProfileMenu from '../../Components/ProfileMenu';
+import useTodos from '../../Hooks/useTodos';
 
 export default function Dashboard() {
+
+    const { myTodos } = useTodos();
 
     const [state, setState] = React.useState({
         top: false,
@@ -75,7 +78,7 @@ export default function Dashboard() {
                             <ListItemIcon>
                                 <ListAltIcon />
                             </ListItemIcon>
-                            <ListItemText primary={'Todo List'} />
+                            <ListItemText primary={`Todo List (${myTodos?.length})`} />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>

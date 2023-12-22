@@ -1,10 +1,10 @@
 import Lottie from "lottie-react"
 import todosLottie from '../../../assets/LottieAnimations/todoList.json'
-import useGetTodos from "../../../Hooks/useGetTodos"
+import Todos from "./Todos";
+import useTodos from "../../../Hooks/useTodos";
 
 const TodoList = () => {
-    const { myTodos } = useGetTodos()
-    console.log(myTodos)
+    const { myTodos } = useTodos()
 
     return (
         <div className="px-1 md:px-2 pb-3">
@@ -13,8 +13,11 @@ const TodoList = () => {
                 <div className="md:col-span-7 order-2 md:order-1 overflow-x-auto">
                     <h1 className="text-center font-bold text-lg md:text-2xl mt-1 md:hidden text-gray-500 mb-1">Your todos</h1>
 
-                    <div className="overflow-y-auto h-[70vh] lg:h-[60vh] px-2 space-y-3">
+                    <div className="overflow-y-auto h-[70vh] lg:h-[60vh] px-2 space-y-3 py-3">
                         {/* todos here */}
+                        {
+                            myTodos?.map((todo, index) => <Todos key={todo?._id} todo={todo} index={index} />)
+                        }
                     </div>
 
                 </div>
