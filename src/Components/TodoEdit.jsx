@@ -118,7 +118,7 @@ const TodoEdit = () => {
                                 <MenuItem value={'High'}>High</MenuItem>
                             </Select>
                         </FormControl>
-                        <Button variant="contained" type="submit" className="mx-auto w-full border p-1 rounded-md">Add Task {loading && <TbFidgetSpinner className="text-white ml-3 animate-spin font-bold" />}</Button>
+                        <Button variant="contained" type="submit" className="mx-auto w-full border p-1 rounded-md">Update Task {loading && <TbFidgetSpinner className="text-white ml-3 animate-spin font-bold" />}</Button>
                     </form>
                 </div>
                 <div className="md:col-span-5 order-1 md:order-2">

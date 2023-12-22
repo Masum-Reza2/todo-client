@@ -1,5 +1,5 @@
-import Lottie from "lottie-react"
-import todosLottie from '../../../assets/LottieAnimations/todoList.json'
+import Lottie from "lottie-react";
+import todosLottie from '../../../assets/LottieAnimations/todoList.json';
 import Todos from "./Todos";
 import useTodos from "../../../Hooks/useTodos";
 import Spinner from "../../../Components/Spinner";

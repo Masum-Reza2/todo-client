@@ -3,7 +3,7 @@ import useGlobal from "../Hooks/useGlobal";
 import { useParams } from "react-router-dom";
 import useSecureAxios from "../Hooks/useSecureAxios";
 import { useQuery } from "@tanstack/react-query";
-import taskLottie from '../assets/LottieAnimations/addTask.json'
+import detailsLottie from '../assets/LottieAnimations/details.json'
 import Countdown from "react-countdown";
 
 
@@ -43,7 +43,7 @@ const TodoDetails = () => {
                     </div>
                 </div>
                 <div className="md:col-span-5 order-1 md:order-2">
-                    <Lottie animationData={taskLottie} loop={true} />
+                    <Lottie animationData={detailsLottie} loop={true} />
                 </div>
             </div>
 
