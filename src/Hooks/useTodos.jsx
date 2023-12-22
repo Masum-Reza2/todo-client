@@ -12,7 +12,12 @@ const useTodos = () => {
             return (res?.data)
         }
     })
-    return { myTodos, isLoading, refetch }
+
+    const previousTask = myTodos?.filter(todo => todo?.previousWorked === true);
+    const ongoingTask = myTodos?.filter(todo => todo?.status === 'ongoing');
+    const completedTask = myTodos?.filter(todo => todo?.status === 'completed');
+
+    return { myTodos, isLoading, refetch, previousTask, ongoingTask, completedTask }
 }
 
 export default useTodos
