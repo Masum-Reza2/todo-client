@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form"
 import Swal from "sweetalert2";
 import useTodos from "../Hooks/useTodos";
 import toast from "react-hot-toast";
+import Spinner from "./Spinner";
 
 
 const TodoEdit = () => {
@@ -22,7 +23,7 @@ const TodoEdit = () => {
     const { user } = useGlobal();
     const { id } = useParams();
     const secureAxios = useSecureAxios();
-    const { data: oldTodo = {} } = useQuery({
+    const { data: oldTodo = {}, isPending } = useQuery({
         queryKey: [id],
         queryFn: async () => {
             const res = await secureAxios.get(`/singleTodos/${id}?email=${user?.email}`)
@@ -77,6 +78,7 @@ const TodoEdit = () => {
         });
     }
 
+    if (isPending) return <Spinner />
     return (
         <div className="px-1 md:px-2">
             <h1 className="text-center font-bold text-lg mt-1 md:text-2xl lg:translate-y-4 xl:translate-y-10 hidden md:block text-gray-500">Update your Goal!</h1>

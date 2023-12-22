@@ -5,6 +5,7 @@ import useSecureAxios from "../Hooks/useSecureAxios";
 import { useQuery } from "@tanstack/react-query";
 import detailsLottie from '../assets/LottieAnimations/details.json'
 import Countdown from "react-countdown";
+import Spinner from "./Spinner";
 
 
 const TodoDetails = () => {
@@ -12,7 +13,7 @@ const TodoDetails = () => {
     const { user } = useGlobal();
     const { id } = useParams();
     const secureAxios = useSecureAxios();
-    const { data: oldTodo = {} } = useQuery({
+    const { data: oldTodo = {}, isPending } = useQuery({
         queryKey: [id],
         queryFn: async () => {
             const res = await secureAxios.get(`/singleTodos/${id}?email=${user?.email}`)
@@ -24,6 +25,7 @@ const TodoDetails = () => {
     const currentDate = new Date();
     const timeDifference = futureDate.getTime() - currentDate.getTime();
 
+    if (isPending) return <Spinner />
     return (
         <div className="px-1 md:px-2">
             <div className="grid md:grid-cols-12 md:gap-3 md:items-center">

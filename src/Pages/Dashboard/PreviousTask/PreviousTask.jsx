@@ -2,12 +2,15 @@ import Lottie from "lottie-react"
 import previousLottie from '../../../assets/LottieAnimations/details.json'
 import Countdown from "react-countdown"
 import useTodos from "../../../Hooks/useTodos"
+import Spinner from "../../../Components/Spinner"
 
 const PreviousTask = () => {
-    const { previousTask } = useTodos();
+    const { previousTask, isLoading } = useTodos();
     const futureDate = new Date(previousTask[0]?.deadline);
     const currentDate = new Date();
     const timeDifference = futureDate.getTime() - currentDate.getTime();
+
+    if (isLoading) return <Spinner />
     return (
         <div className="px-1 md:px-2 pb-3">
             <h1 className="text-center font-bold text-lg mt-1 md:text-2xl lg:translate-y-4 xl:translate-y-10 hidden md:block text-gray-500">Your Previous Task</h1>
