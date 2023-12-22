@@ -18,7 +18,7 @@ const TodoList = () => {
                     <div className="overflow-y-auto h-[70vh] lg:h-[60vh] px-2 space-y-3 py-3">
                         {/* todos here */}
                         {
-                            myTodos?.map((todo, index) => <Todos key={todo?._id} todo={todo} index={index} />)
+                            myTodos?.map((todo, index) => <Todos key={todo?._id} todo={todo} index={index} todoList={true} />)
                         }
                     </div>
 

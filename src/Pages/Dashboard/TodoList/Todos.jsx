@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import useTodos from '../../../Hooks/useTodos';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const Todos = ({ todo, index, ongoing }) => {
+const Todos = ({ todo, index, todoList, ongoing, completed }) => {
     const { user } = useGlobal();
     const secureAxios = useSecureAxios();
     const { refetch } = useTodos()
@@ -97,22 +97,27 @@ const Todos = ({ todo, index, ongoing }) => {
                 </div>
             </div>
             {
-                !ongoing ?
-                    <div className="space-x-2">
-                        <Link to={`/dashboard/edit/${todo?._id}`}>
-                            <BorderColorIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" /></Link>
-                        <Link to={`/dashboard/details/${todo?._id}`}>
-                            <InfoIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" /></Link>
-                        <DeleteIcon onClick={handleDelete} fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
-                    </div>
-                    :
-                    <div className="space-x-2">
-                        <Link to={`/dashboard/details/${todo?._id}`}>
-                            <InfoIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
-                        </Link>
-                        <CheckCircleIcon onClick={handleCompleted} fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
-                    </div>
-
+                todoList && <div className="space-x-2">
+                    <Link to={`/dashboard/edit/${todo?._id}`}>
+                        <BorderColorIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" /></Link>
+                    <Link to={`/dashboard/details/${todo?._id}`}>
+                        <InfoIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" /></Link>
+                    <DeleteIcon onClick={handleDelete} fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
+                </div>
+            }
+            {ongoing && <div className="space-x-2">
+                <Link to={`/dashboard/details/${todo?._id}`}>
+                    <InfoIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
+                </Link>
+                <CheckCircleIcon onClick={handleCompleted} fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
+            </div>
+            }
+            {
+                completed && <div className="space-x-2">
+                    <Link to={`/dashboard/details/${todo?._id}`}>
+                        <InfoIcon fontSize="small" className="hover:scale-110 cursor-pointer active:-translate-y-[0.10rem]" />
+                    </Link>
+                </div>
             }
 
         </div>
