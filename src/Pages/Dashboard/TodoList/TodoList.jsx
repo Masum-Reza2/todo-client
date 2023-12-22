@@ -2,10 +2,12 @@ import Lottie from "lottie-react"
 import todosLottie from '../../../assets/LottieAnimations/todoList.json'
 import Todos from "./Todos";
 import useTodos from "../../../Hooks/useTodos";
+import Spinner from "../../../Components/Spinner";
 
 const TodoList = () => {
-    const { myTodos } = useTodos()
+    const { myTodos, isLoading } = useTodos()
 
+    if (isLoading) return <Spinner />
     return (
         <div className="px-1 md:px-2 pb-3">
             <h1 className="text-center font-bold text-lg mt-1 md:text-2xl lg:translate-y-4 xl:translate-y-10 hidden md:block text-gray-500">Your todos</h1>

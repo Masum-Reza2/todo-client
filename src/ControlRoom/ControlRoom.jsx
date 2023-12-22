@@ -82,7 +82,7 @@ const ControlRoom = ({ children }) => {
         return () => {
             return unsubscribe();
         }
-    }, [])
+    }, [publicAxios, user])
 
 
     // >>>>>>firebase functions<<<<<<
