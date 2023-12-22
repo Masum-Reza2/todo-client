@@ -33,7 +33,7 @@ const AddTask = () => {
                 deadline: data?.deadline,
                 priority,
                 status: 'ongoing',
-                previousWorked: false
+                previousWorked: true
             }
             await secureAxios.post('/todos', todo);
             setLoading(false);
