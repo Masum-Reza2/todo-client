@@ -24,7 +24,7 @@ import useTodos from '../../Hooks/useTodos';
 
 export default function Dashboard() {
 
-    const { myTodos } = useTodos();
+    const { myTodos, ongoingTask, completedTask } = useTodos();
 
     const [state, setState] = React.useState({
         top: false,
@@ -89,7 +89,7 @@ export default function Dashboard() {
                             <ListItemIcon>
                                 <DirectionsRunIcon />
                             </ListItemIcon>
-                            <ListItemText primary={`Ongoing Task`} />
+                            <ListItemText primary={`Ongoing Task (${ongoingTask?.length})`} />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>
@@ -100,7 +100,7 @@ export default function Dashboard() {
                             <ListItemIcon>
                                 <CloudDoneIcon />
                             </ListItemIcon>
-                            <ListItemText primary={`Completed Task`} />
+                            <ListItemText primary={`Completed Task (${completedTask?.length})`} />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>

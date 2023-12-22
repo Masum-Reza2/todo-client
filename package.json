@@ -31,6 +31,7 @@
     "react-parallax": "^3.5.1",
     "react-parallax-tilt": "^1.7.177",
     "react-router-dom": "^6.21.0",
+    "react-simple-typewriter": "^5.0.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.1"
   },
