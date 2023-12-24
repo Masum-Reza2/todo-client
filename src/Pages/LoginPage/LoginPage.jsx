@@ -33,7 +33,9 @@ const LoginPage = () => {
             setLoading(false);
             toast.success('Login successful!');
             navigate(state || '/');
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
         } catch (error) {
             toast.error(error?.message);
             setLoading(false);

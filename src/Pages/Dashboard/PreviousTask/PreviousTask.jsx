@@ -33,7 +33,7 @@ const PreviousTask = () => {
                             </div>
                         </div>
                         :
-                        <div className="md:col-span-7 order-2 md:order-1 pb-3 text-center font-bold text-lg md:text-2xl">No previous task found</div>
+                        <div className="md:col-span-7 order-2 md:order-1 pb-3 text-center font-bold text-lg md:text-2xl text-gray-500">No previous task found</div>
                 }
 
                 <div className="md:col-span-5 order-1 md:order-2">

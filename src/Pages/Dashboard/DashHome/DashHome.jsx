@@ -1,6 +1,9 @@
 import Lottie from "lottie-react"
 import completedLottie from '../../../assets/LottieAnimations/welcomeHome.json'
 import { Typewriter } from "react-simple-typewriter"
+import useTodos from "../../../Hooks/useTodos";
+import { useEffect } from "react";
+import useGlobal from "../../../Hooks/useGlobal";
 
 const message = [
     "Manage tasks effortlessly.",
@@ -11,6 +14,11 @@ const message = [
 ];
 
 const DashHome = () => {
+    const { user } = useGlobal();
+    const { refetch } = useTodos();
+    useEffect(() => {
+        refetch();
+    }, [user])
     return (
         <div className="grid grid-cols-12 py-5 md:py-0 md:place-items-center">
             <div className="col-span-12 md:col-span-6 order-2 md:order-1">
