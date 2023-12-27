@@ -62,7 +62,7 @@ const RegisterPage = () => {
     }
 
     return (
-        <div className="flex flex-col-reverse gap-10 px-2 lg:px-20 md:flex-row items-center justify-center  py-2 md:py-10 lg:py-0 lg:h-screen overflow-hidden md:gap-5 bg-[#cbd7fc]">
+        <div className="flex flex-col-reverse gap-10 px-2 lg:px-20 md:flex-row items-center justify-center  py-2 md:py-10 lg:py-0 lg:h-screen overflow-hidden md:gap-5 bg-[#cbd7fc] pb-7 md:pb-5 lg:pb-0">
             <form onSubmit={handleSubmit(onSubmit)} className="relative flex-1 flex flex-col w-full md:max-w-md lg:max-w-lg md: mx-auto text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
 
                 {/* heading */}
