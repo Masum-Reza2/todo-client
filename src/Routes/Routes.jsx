@@ -1,19 +1,19 @@
-import { createBrowserRouter } from "react-router-dom"
-import Layout from "../Layout/Layout"
-import ErrorPage from "../Pages/ErrorPage/ErrorPage"
-import LoginPage from "../Pages/LoginPage/LoginPage"
-import RegisterPage from "../Pages/RegisterPage/RegisterPage"
-import Home from "../Pages/Home/Home"
-import Dashboard from "../Pages/Dashboard/Dashboard"
-import PrivateRoute from "./PrivateRoute"
-import AddTask from "../Pages/Dashboard/AddTask/AddTask"
-import DashHome from "../Pages/Dashboard/DashHome/DashHome"
-import PreviousTask from "../Pages/Dashboard/PreviousTask/PreviousTask"
-import TodoList from "../Pages/Dashboard/TodoList/TodoList"
-import OngoingTask from "../Pages/Dashboard/OngoingTask/OngoingTask"
-import CompletedTask from "../Pages/Dashboard/CompletedTask/CompletedTask"
-import TodoDetails from "../Components/TodoDetails"
-import TodoEdit from "../Components/TodoEdit"
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "../Layout/Layout";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import LoginPage from "../Pages/LoginPage/LoginPage";
+import RegisterPage from "../Pages/RegisterPage/RegisterPage";
+import Home from "../Pages/Home/Home";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import AddTask from "../Pages/Dashboard/AddTask/AddTask";
+import DashHome from "../Pages/Dashboard/DashHome/DashHome";
+import PreviousTask from "../Pages/Dashboard/PreviousTask/PreviousTask";
+import TodoList from "../Pages/Dashboard/TodoList/TodoList";
+import OngoingTask from "../Pages/Dashboard/OngoingTask/OngoingTask";
+import CompletedTask from "../Pages/Dashboard/CompletedTask/CompletedTask";
+import TodoDetails from "../Components/TodoDetails";
+import TodoEdit from "../Components/TodoEdit";
 
 const Routes = createBrowserRouter([
     {

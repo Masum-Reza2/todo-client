@@ -1,8 +1,19 @@
-# React + Vite
+# To run this frontend task manager app on your local computer follow the undermentioned instructions>>>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- At first clone the project or download the zip file on your local machine.
+- Then Open with Visual Studio Code.
+- Run this command >>> npm install
+- Then create a .env.local file in the root directory.
+- Then copy and paste the followings on .env.local file >>>
 
-Currently, two official plugins are available:
+<p>VITE_apiKey=AIzaSyD3R5mqW8Dp9ahXUHuzZ8gR-lcNEwiEo3E
+VITE_authDomain=commerce-book.firebaseapp.com
+VITE_projectId=commerce-book
+VITE_storageBucket=commerce-book.appspot.com
+VITE_messagingSenderId=311030196048
+VITE_appId=1:311030196048:web:03d2d767e44ecfb054ae55</p>
+- Run this command >>> npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Now frontend is done. Let's move to backend set up.
+
+# https://github.com/Masum-Reza2/todo-server
