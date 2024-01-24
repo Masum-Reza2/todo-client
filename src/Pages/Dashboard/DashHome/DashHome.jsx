@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import useGlobal from "../../../Hooks/useGlobal";
 
 const message = [
+    "I'm a Task Manager.",
     "Manage tasks effortlessly.",
     "Save, update, and delete tasks with ease.",
     "Stay organized and boost productivity.",
@@ -25,7 +26,7 @@ const DashHome = () => {
                 <Lottie animationData={completedLottie} loop={true} />
             </div>
             <div className="col-span-12 md:col-span-6 flex flex-col items-center justify-center order-1 md:order-2">
-                <h1 className='text-xl md:text-2xl font-bold'>Hi i’m <span className='text-orange-500'>Task-Manager.</span></h1><span className='text-green-700 text-xl md:text-2xl font-bold text-center min-h-[15vh]'>
+                <h1 className='text-xl md:text-2xl font-bold'>Hello <span className='text-orange-500'>Team DevTown.</span></h1><span className='text-green-700 text-xl md:text-2xl font-bold text-center min-h-[15vh]'>
                     <Typewriter words={message} loop={false} />
                 </span>
             </div>
